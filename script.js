@@ -95,10 +95,10 @@ cardsBox.addEventListener('click', (e) => {
   const btn = e.target.closest('.target__btn');
   if (!btn) return;
 
-  if (btn.classList.contains('delete')) {
-    // select Index
-    const cardIndex = btn.closest('.card').dataset.index;
+  // select Index
+  const cardIndex = btn.closest('.card').dataset.index;
 
+  if (btn.classList.contains('delete')) {
     // Delete based on index
     myLibrary.splice(cardIndex, 1);
     renderHtml(myLibrary);
@@ -118,7 +118,6 @@ cardsBox.addEventListener('click', (e) => {
     cardStatus.classList.toggle('greenclr');
 
     // Update Arr and Storage
-    const cardIndex = btn.closest('.card').dataset.index;
     myLibrary[cardIndex].status = cardStatus.textContent;
     updateStorage();
 
@@ -193,7 +192,6 @@ const resetBtn = document.querySelector('.restore__btn');
 const reset = function () {
   const res = prompt(`Type 'reset' to restore to default Data`);
 
-  console.log(res.toLowerCase() !== 'reset');
   if (res.toLowerCase() !== 'reset') return;
   myLibrary = [...defaultData];
   localStorage.removeItem('library');
@@ -202,10 +200,6 @@ const reset = function () {
 };
 
 resetBtn.addEventListener('click', reset);
-
-// localStorage.removeItem('library');
-
-// render the Arr into Html
 
 // Prevent Programmatic submit
 // form.addEventListener('submit', (e) => {
