@@ -1,0 +1,190 @@
+// Cards
+.cards-box {
+  max-width: 120rem;
+  margin: 3rem auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  justify-items: center;
+}
+
+.card {
+  position: relative;
+  border-radius: 5px;
+  // max-height: 70rem;
+  max-width: 45rem;
+  overflow: hidden;
+  border: 6px solid #fff;
+  position: relative;
+  transition: all 0.1s;
+
+  &__img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: top;
+  }
+
+  &__overlay {
+    padding: 0 1rem;
+    font-family: 'SUSE', sans-serif;
+    color: #fff;
+    height: 100%;
+    width: 100%;
+    background-color: rgba($color: #000000, $alpha: 0.7);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    visibility: hidden;
+    opacity: 0;
+    display: flex;
+    gap: 3rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    transition: all 0.3s ease-in;
+  }
+
+  &__rating {
+    font-size: 1.4rem;
+  }
+
+  &__title {
+    font-size: 2.1rem;
+    font-weight: 700;
+    text-transform: capitalize;
+    margin-bottom: 1.5rem;
+  }
+
+  &__author {
+    font-size: 1.3rem;
+    font-weight: 600;
+  }
+
+  &__toggle {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 0.5rem;
+    justify-self: flex-end;
+  }
+
+  &__status {
+    font-size: 1.5rem;
+    font-weight: 700;
+    // padding: 0.7rem;
+    // border-radius: 50rem;
+    display: inline-block;
+    // background-color: rgba($color: #000000, $alpha: 0.5);
+    flex: 0 0 40%;
+  }
+
+  &:hover {
+    border-color: $color-primary;
+    transform: scale(1.1);
+
+    & .card__overlay {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+
+  &:hover .btn {
+    animation: translateY 0.5s linear 0.1s;
+  }
+}
+
+// Form
+.form {
+  position: absolute;
+  border-radius: 8px;
+  height: 50rem;
+  width: 43rem;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #000;
+  background-color: rgba($color: #e1d7c6, $alpha: 0.9);
+  padding: 2rem 3rem;
+  overflow: hidden;
+  font-family: 'SUSE', sans-serif;
+  z-index: 2;
+  animation-name: slideIn;
+  animation-duration: 0.6s;
+
+  &__header {
+    text-align: center;
+    font-size: 4rem;
+    letter-spacing: -2px;
+    font-family: 'Kalam', sans-serif;
+    margin-bottom: 2rem;
+    font-weight: 600;
+  }
+
+  &__label {
+    display: block;
+    font-size: 1.3rem;
+    font-weight: 600;
+  }
+
+  &__group:not(:last-child) {
+    margin-bottom: 3rem;
+  }
+
+  &__input {
+    font-family: 'SUSE';
+    padding: 0.5rem 0.8rem;
+    width: 100%;
+    outline: none;
+    background-color: transparent;
+    // border-radius: 5px;
+    border: none;
+    border-bottom: 2px solid rgba($color: #555, $alpha: 0.2);
+    transition: all 0.2s;
+
+    &:focus {
+      border-bottom: 2px solid $color-primary;
+
+      &:invalid {
+        border-bottom: 2px solid #f5004f;
+      }
+    }
+
+    &::placeholder {
+      font-family: inherit;
+      font-size: 1.1rem;
+    }
+  }
+
+  &__btn {
+    border: 1px solid #dba756;
+    cursor: pointer;
+    letter-spacing: 3px;
+    margin-top: 3rem;
+    text-transform: uppercase;
+    padding: 0.5rem 1rem;
+    background-color: $color-primary;
+    border-radius: 5px;
+    width: 100%;
+    font-weight: 700;
+    color: #000;
+    font-family: 'Kalam';
+    font-size: 1.8rem;
+    outline: none;
+    transition: all 0.2s;
+
+    &:hover {
+      filter: brightness(0.95);
+    }
+  }
+}
+
+input[type='number']::-webkit-outer-spin-button,
+input[type='number']::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}

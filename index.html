@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="shortcut icon" href="img/odin-icon.svg" type="image/svg" />
+    <title>Odin || Library</title>
+  </head>
+  <body>
+    <header>
+      <h1 class="header">Welcome!</h1>
+      <h2 class="header__sub">To your personal Library</h2>
+    </header>
+
+    <main class="cards-box"></main>
+
+    <div class="modal hidden">
+      <div class="modal__overlay"></div>
+
+      <form class="form">
+        <span class="modal__close">&times;</span>
+        <h1 class="form__header">Add a new book</h1>
+
+        <div class="form__group">
+          <label for="title" class="form__label">Title :</label>
+          <input type="text" minlength="3" id="title" class="form__input" required />
+        </div>
+
+        <div class="form__group">
+          <label for="author" class="form__label">Author :</label>
+          <input type="text" minlength="3" id="author" class="form__input" required />
+        </div>
+
+        <div class="form__group">
+          <label for="imgUrl" class="form__label">img-URL (optional) :</label>
+          <input
+            type="text"
+            id="imgUrl"
+            pattern=".+\.(gif|jpe?g|tiff?|png|webp|bmp)$"
+            class="form__input"
+          />
+        </div>
+
+        <div class="form__group">
+          <label for="rating" class="form__label">Rating (optional) :</label>
+          <input
+            placeholder="/ 10"
+            type="number"
+            id="rating"
+            class="form__input no-spinner"
+            min="0"
+            max="10"
+            step="0.1"
+          />
+        </div>
+
+        <button type="submit" class="form__btn">Get Book</button>
+      </form>
+    </div>
+
+    <button class="add__btn">&#43;</button>
+
+    <svg class="restore__btn">
+      <use href="./img/icons.svg#icon-restore"></use>
+    </svg>
+
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,28 @@
+// $color-primary: #e7cccc;
+$color-primary: #e8b86d;
+// $color-primary: #cdc2a5;
+
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: rgb(37, 37, 37);
+  color: #fff;
+  position: relative;
+  min-height: 100vh;
+  padding: 0 2rem;
+}
+
+::selection {
+  background-color: $color-primary;
+}

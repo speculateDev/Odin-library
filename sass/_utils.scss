@@ -1,0 +1,168 @@
+.btn {
+  cursor: pointer;
+  width: 7rem;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  border-radius: 10rem;
+  padding: 0.4rem;
+  background-color: transparent;
+  transition: all 0.2s;
+
+  &__icon {
+    z-index: 5;
+    height: 3rem;
+    width: 3rem;
+    transition: all 0.3s ease;
+    fill: #f5004f;
+  }
+}
+
+.active {
+  transform: translateX(32px) rotate(350deg);
+}
+
+// Add Btn
+.add__btn {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  height: 6rem;
+  width: 6rem;
+  border: 1px solid #dba756;
+  padding: 0.5rem;
+  background-color: $color-primary;
+  border-radius: 100%;
+  cursor: pointer;
+  font-size: 3.5rem;
+  font-family: 'Kalam';
+  font-weight: 600;
+  outline: none;
+  transition: all 0.2s;
+
+  &:hover {
+    filter: brightness(0.8);
+
+    transform: rotate(90deg);
+  }
+}
+
+.greenClr {
+  fill: #399918;
+}
+
+.redClr {
+  color: #f5004f;
+  text-shadow: 1px 1px 2px #f5004f;
+}
+
+.greenclr {
+  color: #399918;
+  text-shadow: 1px 1px 2px #399918;
+}
+
+.star {
+  fill: $color-primary;
+  height: 3rem;
+  width: 3rem;
+}
+
+.delete {
+  fill: #fff;
+  position: absolute;
+  height: 2rem;
+  width: 2rem;
+  top: 0.5rem;
+  right: 0.7rem;
+  cursor: pointer;
+  z-index: 3;
+
+  &:hover {
+    fill: #f5004f;
+  }
+}
+
+.restore__btn {
+  fill: #fff;
+  position: absolute;
+  cursor: pointer;
+  height: 2rem;
+  width: 2rem;
+  top: -2rem;
+  right: 2rem;
+  transition: all 0.2s;
+
+  &:hover {
+    fill: crimson;
+  }
+}
+
+@keyframes translateY {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  80% {
+    transform: translateY(-10px);
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    top: 70%;
+  }
+
+  to {
+    opacity: 1;
+    top: 50%;
+  }
+}
+
+// Modal
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba($color: #000000, $alpha: 0.5);
+  backdrop-filter: blur(10px);
+  z-index: 5;
+  transition: all 0.3s;
+
+  &__close {
+    border: none;
+    background-color: transparent;
+    font-size: 2.5rem;
+    line-height: 1;
+    position: absolute;
+    top: 1rem;
+    right: 1.8rem;
+    cursor: pointer;
+    opacity: 0.7;
+    transition: opacity 0.2s;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  &__overlay {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+}
+
+.hidden {
+  display: none;
+}
