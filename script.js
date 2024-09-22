@@ -1,6 +1,4 @@
 const cardsBox = document.querySelector('.cards-box');
-const cards = document.querySelectorAll('.card');
-
 // On load
 const defaultData = [
   {
